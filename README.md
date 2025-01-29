@@ -72,7 +72,7 @@ Server runs at `localhost:9000` by default.
 ## Response Format 📝
 
 ### Success Response
-```json
+```
 {
     "status": "success",
     "data": {
@@ -82,7 +82,7 @@ Server runs at `localhost:9000` by default.
 ```
 
 ### Error Response
-```json
+```
 {
     "status": "fail",
     "message": "Error description"
@@ -146,7 +146,7 @@ Test files:
 - Server must run on port 9000
 - Application must be started using `npm run start` command
 - Package.json should contain:
-  ```json
+  ```
   {
     "scripts": {
       "start": "node src/server.js",
@@ -159,7 +159,7 @@ Test files:
 
 #### Create Book (POST /books)
 **Request Body:**
-```json
+```
 {
     "name": string,
     "year": number,
@@ -173,7 +173,7 @@ Test files:
 ```
 
 **Stored Book Structure:**
-```json
+```
 {
     "id": "Qbax5Oy7L8WKf74l",
     "name": "Buku A",
@@ -199,7 +199,7 @@ Test files:
 **Error Responses:**
 1. Missing name property:
    - Status: 400
-   ```json
+   ```
    {
        "status": "fail",
        "message": "Gagal menambahkan buku. Mohon isi nama buku"
@@ -208,7 +208,7 @@ Test files:
 
 2. ReadPage greater than pageCount:
    - Status: 400
-   ```json
+   ```
    {
        "status": "fail",
        "message": "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount"
@@ -217,7 +217,7 @@ Test files:
 
 **Success Response:**
 - Status: 201
-```json
+```
 {
     "status": "success",
     "message": "Buku berhasil ditambahkan",
@@ -232,7 +232,7 @@ Returns a list of all books with basic information.
 
 **Success Response:**
 - Status: 200
-```json
+```
 {
     "status": "success",
     "data": {
@@ -250,7 +250,7 @@ Returns a list of all books with basic information.
 #### Get Book Detail (GET /books/{bookId})
 **Error Response:**
 - Status: 404
-```json
+```
 {
     "status": "fail",
     "message": "Buku tidak ditemukan"
@@ -259,7 +259,7 @@ Returns a list of all books with basic information.
 
 **Success Response:**
 - Status: 200
-```json
+```
 {
     "status": "success",
     "data": {
@@ -285,7 +285,7 @@ Returns a list of all books with basic information.
 **Error Responses:**
 1. Missing name:
    - Status: 400
-   ```json
+   ```
    {
        "status": "fail",
        "message": "Gagal memperbarui buku. Mohon isi nama buku"
@@ -294,16 +294,14 @@ Returns a list of all books with basic information.
 
 2. Invalid readPage:
    - Status: 400
-   ```json
+   ```
    {
        "status": "fail",
        "message": "Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount"
    }
-   ```
-
-3. Book not found:
+   ```3. Book not found:
    - Status: 404
-   ```json
+   ```
    {
        "status": "fail",
        "message": "Gagal memperbarui buku. Id tidak ditemukan"
@@ -312,7 +310,7 @@ Returns a list of all books with basic information.
 
 **Success Response:**
 - Status: 200
-```json
+```
 {
     "status": "success",
     "message": "Buku berhasil diperbarui"
@@ -322,7 +320,7 @@ Returns a list of all books with basic information.
 #### Delete Book (DELETE /books/{bookId})
 **Error Response:**
 - Status: 404
-```json
+```
 {
     "status": "fail",
     "message": "Buku gagal dihapus. Id tidak ditemukan"
@@ -331,9 +329,10 @@ Returns a list of all books with basic information.
 
 **Success Response:**
 - Status: 200
-```json
+```
 {
     "status": "success",
     "message": "Buku berhasil dihapus"
 }
 ```
+
